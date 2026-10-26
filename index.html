@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jenrx — Take Control of Your Health, Simply</title>
+  <meta name="description" content="Jenrx is a friendly, stress-free personal health tracking companion. Track medications, hospital appointments, blood pressure, and medical documents with ease.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans for a clean, modern, airy, playful aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Frosted Glassmorphism Navbar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="#home" class="nav-brand" aria-label="Jenrx Home">
+        <img src="images/logo_text.png" alt="Jenrx Logo" class="brand-logo">
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Jenrx</a>
+        <a href="#features" class="nav-link">Features</a>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="btn btn-primary btn-sm btn-apk-trigger" id="navCtaBtn">
+          <svg class="android-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.523 15.34c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11.046 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.405-6.02 1.997-3.46a.416.416 0 0 0-.152-.568.416.416 0 0 0-.568.152l-2.022 3.503C15.59 8.412 13.853 8.125 12 8.125s-3.59.287-5.137.83L4.841 5.452a.416.416 0 0 0-.568-.152.416.416 0 0 0-.152.568l1.997 3.459C2.689 11.187.343 14.659 0 18.761h24c-.343-4.102-2.689-7.574-6.119-9.44"/>
+          </svg>
+          <span>Download APK</span>
+        </button>
+        <button type="button" class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#home" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About Jenrx</a>
+      <a href="#features" class="mobile-nav-link">Features</a>
+      <button type="button" class="btn btn-primary btn-full btn-apk-trigger">
+        <svg class="android-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.523 15.34c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11.046 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.405-6.02 1.997-3.46a.416.416 0 0 0-.152-.568.416.416 0 0 0-.568.152l-2.022 3.503C15.59 8.412 13.853 8.125 12 8.125s-3.59.287-5.137.83L4.841 5.452a.416.416 0 0 0-.568-.152.416.416 0 0 0-.152.568l1.997 3.459C2.689 11.187.343 14.659 0 18.761h24c-.343-4.102-2.689-7.574-6.119-9.44"/>
+        </svg>
+        <span>Download APK</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container hero-container">
+      
+      <!-- Hero Left: Headline, Description & CTA -->
+      <div class="hero-content">
+        <h1 class="hero-title">Take Control of Your Health, Simply</h1>
+        <p class="hero-description">
+          A friendly, stress-free personal health companion designed to help you stay on top of daily prescriptions, upcoming hospital visits, vital blood pressure logs, and medical records—all in one quiet, reassuring space.
+        </p>
+
+        <div class="hero-cta-group">
+          <button type="button" class="btn btn-primary btn-lg btn-apk-trigger" id="heroCtaBtn">
+            <svg class="android-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.523 15.34c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11.046 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.405-6.02 1.997-3.46a.416.416 0 0 0-.152-.568.416.416 0 0 0-.568.152l-2.022 3.503C15.59 8.412 13.853 8.125 12 8.125s-3.59.287-5.137.83L4.841 5.452a.416.416 0 0 0-.568-.152.416.416 0 0 0-.152.568l1.997 3.459C2.689 11.187.343 14.659 0 18.761h24c-.343-4.102-2.689-7.574-6.119-9.44"/>
+            </svg>
+            <span>Download APK</span>
+            <span class="btn-subtext">(Coming Soon)</span>
+          </button>
+          <span class="hero-platform-note">Android APK • Free & Privacy-first</span>
+        </div>
+
+        <div class="hero-perks">
+          <div class="perk-item">
+            <span class="perk-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="perk-text">No cluttered dashboards</span>
+          </div>
+          <div class="perk-item">
+            <span class="perk-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="perk-text">Private on-device storage</span>
+          </div>
+          <div class="perk-item">
+            <span class="perk-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="perk-text">Friendly daily reminders</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Right: 3D Mobile Mockup Showcase -->
+      <div class="hero-mockup-wrap">
+        <div class="mockup-scene" id="mockupScene">
+          
+          <!-- 3D Smartphone Device Mockup -->
+          <div class="phone-device" id="phoneDevice">
+            <div class="phone-outer-frame">
+              <div class="phone-speaker-notch">
+                <span class="camera-lens"></span>
+              </div>
+              <div class="phone-screen">
+                <img src="images/mobile_preview.png" alt="Jenrx Mobile App Preview" class="phone-screen-img">
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Companion Badges Layer (Positioned on the VERY TOP Layer) -->
+          <div class="floating-badges-overlay">
+            <div class="floating-badge badge-top-left">
+              <span class="badge-dot"></span>
+              <span class="badge-label">100% Med Adherence</span>
+            </div>
+
+            <div class="floating-badge badge-top-right">
+              <div class="badge-icon-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0052CC" aria-hidden="true">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+              <div class="badge-text-group">
+                <span class="badge-title">BP 118 / 78 mmHg</span>
+                <span class="badge-caption">Optimal &amp; Stable</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Jenrx Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-header">
+        <h2 class="section-title">Health tracking built for everyday humans, not hospitals</h2>
+        <p class="about-lead">
+          Managing medications, blood pressure records, and clinical appointments shouldn't feel like a second job. Jenrx is your friendly, quiet companion that strips away the stress, medical jargon, and anxiety from daily health care.
+        </p>
+      </div>
+
+      <!-- Human Core Pillars (Clean, soft-shadow cards) -->
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon-container">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <h3 class="about-card-title">Friendly & Reassuring</h3>
+          <p class="about-card-text">
+            No alarming red banners or robotic medical jargon. Jenrx greets you with warmth and helps you log your day with zero friction in under 30 seconds.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon-container">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="about-card-title">All-in-One Clarity</h3>
+          <p class="about-card-text">
+            Stop searching through sticky notes, text messages, and paper folders. From daily pills to specialist consultations, every piece has its place.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon-container">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3 class="about-card-title">Private & Local-First</h3>
+          <p class="about-card-text">
+            Your personal medical records and health readings belong strictly to you. Data is stored safely on your device with complete confidentiality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid Section -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="features-intro">
+        <h2 class="section-title">Designed with care. Focused on what matters.</h2>
+        <p class="features-lead">
+          Four essential tools tuned to perfection, making daily wellness intuitive, clear, and dependable.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- Feature 1: Medicine Tracker -->
+        <article class="feature-card">
+          <div class="feature-card-content">
+            <h3 class="feature-title">Medicine Tracker</h3>
+            <p class="feature-description">
+              Calendar overview for daily dosage logging. Mark daily pills with a single tap, track streaks, and never doubt whether you took your morning prescription.
+            </p>
+          </div>
+
+          <div class="feature-card-preview">
+            <!-- Interactive visual preview: Mini Calendar & Pill Log -->
+            <div class="preview-box">
+              <div class="preview-header">
+                <span class="preview-label">Daily Dosage Schedule</span>
+                <span class="preview-chip">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+                  </svg>
+                  <span>14-Day Streak</span>
+                </span>
+              </div>
+
+              <!-- Weekday strip -->
+              <div class="calendar-strip">
+                <div class="day-col completed">
+                  <span class="day-name">M</span>
+                  <span class="day-num">24</span>
+                  <span class="day-check" aria-label="Completed">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                </div>
+                <div class="day-col completed">
+                  <span class="day-name">T</span>
+                  <span class="day-num">25</span>
+                  <span class="day-check" aria-label="Completed">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                </div>
+                <div class="day-col active-today">
+                  <span class="day-name">W</span>
+                  <span class="day-num">26</span>
+                  <span class="day-dot"></span>
+                </div>
+                <div class="day-col">
+                  <span class="day-name">T</span>
+                  <span class="day-num">27</span>
+                </div>
+                <div class="day-col">
+                  <span class="day-name">F</span>
+                  <span class="day-num">28</span>
+                </div>
+                <div class="day-col">
+                  <span class="day-name">S</span>
+                  <span class="day-num">29</span>
+                </div>
+                <div class="day-col">
+                  <span class="day-name">S</span>
+                  <span class="day-num">30</span>
+                </div>
+              </div>
+
+              <!-- Medicine checklist items -->
+              <div class="med-checklist">
+                <div class="med-row taken">
+                  <div class="med-row-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" aria-hidden="true">
+                      <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+                      <path d="m8.5 8.5 7 7"/>
+                    </svg>
+                  </div>
+                  <div class="med-row-info">
+                    <span class="med-row-name">Metformin 500mg</span>
+                    <span class="med-row-sub">Morning dose • Logged 8:15 AM</span>
+                  </div>
+                  <span class="med-status-tag done">Taken</span>
+                </div>
+
+                <div class="med-row pending">
+                  <div class="med-row-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" aria-hidden="true">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                    </svg>
+                  </div>
+                  <div class="med-row-info">
+                    <span class="med-row-name">Vitamin D3 Drops</span>
+                    <span class="med-row-sub">With meal • Scheduled 1:00 PM</span>
+                  </div>
+                  <button type="button" class="btn-check-action" title="Click to log dose">Log Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 2: Hospital Appointment Tracker -->
+        <article class="feature-card">
+          <div class="feature-card-content">
+            <h3 class="feature-title">Hospital Appointment Tracker</h3>
+            <p class="feature-description">
+              Reminders and schedule manager. Organize upcoming clinic consultations, doctor notes, room numbers, and pre-visit fasting instructions without missing a beat.
+            </p>
+          </div>
+
+          <div class="feature-card-preview">
+            <!-- Visual preview: Appointment Card -->
+            <div class="preview-box">
+              <div class="preview-header">
+                <span class="preview-label">Upcoming Visit</span>
+                <span class="preview-chip chip-urgent">In 2 Days</span>
+              </div>
+
+              <div class="apt-highlight-card">
+                <div class="apt-meta-banner">
+                  <div class="apt-calendar-badge">
+                    <span class="badge-month">OCT</span>
+                    <span class="badge-day">28</span>
+                  </div>
+                  <div class="apt-details">
+                    <span class="doctor-title">Dr. Eleanor Vance</span>
+                    <span class="doctor-spec">Cardiology &amp; Vascular Health</span>
+                    <span class="doctor-time">Thursday • 10:30 AM (45 min)</span>
+                  </div>
+                </div>
+
+                <div class="apt-location-box">
+                  <div class="loc-pin">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                      <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                  </div>
+                  <div class="loc-details">
+                    <strong>St. Jude Medical Pavilion</strong>
+                    <span>Building B, Room 402</span>
+                  </div>
+                </div>
+
+                <div class="apt-prep-checklist">
+                  <span class="prep-heading">Preparation Check:</span>
+                  <div class="prep-items">
+                    <span class="prep-tag">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Fast 8 hrs prior
+                    </span>
+                    <span class="prep-tag">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Recent Lab Docs
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 3: BP Monitoring -->
+        <article class="feature-card">
+          <div class="feature-card-content">
+            <h3 class="feature-title">BP Monitoring</h3>
+            <p class="feature-description">
+              Blood pressure logging with simple tracking visualizers. Record systolic and diastolic metrics with ease, observe weekly trends, and view clear health indicators.
+            </p>
+          </div>
+
+          <div class="feature-card-preview">
+            <!-- Visual preview: Clean BP Visualizer -->
+            <div class="preview-box">
+              <div class="preview-header">
+                <span class="preview-label">Weekly BP Overview</span>
+                <span class="preview-chip chip-success">Normal Range</span>
+              </div>
+
+              <div class="bp-visualizer-card">
+                <div class="bp-current-stat">
+                  <div class="bp-big-number">
+                    <span class="systolic">118</span>
+                    <span class="divider">/</span>
+                    <span class="diastolic">78</span>
+                    <span class="bp-mmhg">mmHg</span>
+                  </div>
+                  <span class="bp-trend-note">↓ 3 mmHg from last week</span>
+                </div>
+
+                <!-- Minimal, clean bar visualizer -->
+                <div class="bp-chart-bars" aria-label="Blood pressure trends over seven days">
+                  <div class="chart-col">
+                    <div class="bar-fill" style="height: 64%;"></div>
+                    <span class="col-day">M</span>
+                  </div>
+                  <div class="chart-col">
+                    <div class="bar-fill" style="height: 68%;"></div>
+                    <span class="col-day">T</span>
+                  </div>
+                  <div class="chart-col">
+                    <div class="bar-fill" style="height: 62%;"></div>
+                    <span class="col-day">W</span>
+                  </div>
+                  <div class="chart-col">
+                    <div class="bar-fill" style="height: 60%;"></div>
+                    <span class="col-day">T</span>
+                  </div>
+                  <div class="chart-col">
+                    <div class="bar-fill" style="height: 65%;"></div>
+                    <span class="col-day">F</span>
+                  </div>
+                  <div class="chart-col">
+                    <div class="bar-fill" style="height: 59%;"></div>
+                    <span class="col-day">S</span>
+                  </div>
+                  <div class="chart-col active-bar">
+                    <div class="bar-fill" style="height: 58%;"></div>
+                    <span class="col-day">S</span>
+                  </div>
+                </div>
+
+                <div class="bp-legend-row">
+                  <div class="legend-item"><span class="legend-dot dot-systolic"></span> Systolic Avg: 118</div>
+                  <div class="legend-item"><span class="legend-dot dot-diastolic"></span> Diastolic Avg: 78</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Feature 4: Medical Documents Gallery -->
+        <article class="feature-card">
+          <div class="feature-card-content">
+            <h3 class="feature-title">Medical Documents Gallery</h3>
+            <p class="feature-description">
+              Organizes medical records and documents neatly in custom folders. Store test results, prescriptions, and radiology reports securely and find them in seconds.
+            </p>
+          </div>
+
+          <div class="feature-card-preview">
+            <!-- Visual preview: Document Folders Grid -->
+            <div class="preview-box">
+              <div class="preview-header">
+                <span class="preview-label">My Medical Vault</span>
+                <span class="preview-chip">18 Documents</span>
+              </div>
+
+              <div class="folders-grid">
+                <div class="folder-tile">
+                  <div class="folder-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#0052CC" aria-hidden="true">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="folder-meta">
+                    <span class="folder-title">Lab Results</span>
+                    <span class="folder-files">8 PDFs • Yesterday</span>
+                  </div>
+                </div>
+
+                <div class="folder-tile">
+                  <div class="folder-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#0052CC" aria-hidden="true">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="folder-meta">
+                    <span class="folder-title">Prescriptions</span>
+                    <span class="folder-files">4 Active</span>
+                  </div>
+                </div>
+
+                <div class="folder-tile">
+                  <div class="folder-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#0052CC" aria-hidden="true">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="folder-meta">
+                    <span class="folder-title">Imaging &amp; Scans</span>
+                    <span class="folder-files">3 Reports</span>
+                  </div>
+                </div>
+
+                <div class="folder-tile">
+                  <div class="folder-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#0052CC" aria-hidden="true">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </div>
+                  <div class="folder-meta">
+                    <span class="folder-title">Vaccine Cards</span>
+                    <span class="folder-files">3 Cards</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini recent file chip -->
+              <div class="recent-doc-row">
+                <span class="doc-badge">PDF</span>
+                <div class="doc-text">
+                  <span class="doc-name">Comprehensive_Metabolic_Panel.pdf</span>
+                  <span class="doc-date">Added Oct 24 • Verified by Clinic</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pre-Footer CTA Banner -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card">
+        <div class="cta-banner-content">
+          <h2 class="cta-banner-title">Start your stress-free health journey</h2>
+          <p class="cta-banner-desc">
+            Jenrx is getting ready for its official Android release. Tap below to learn more and stay notified the moment the APK package drops.
+          </p>
+          <div class="cta-banner-buttons">
+            <button type="button" class="btn btn-primary btn-lg btn-apk-trigger">
+              <svg class="android-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.523 15.34c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11.046 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.405-6.02 1.997-3.46a.416.416 0 0 0-.152-.568.416.416 0 0 0-.568.152l-2.022 3.503C15.59 8.412 13.853 8.125 12 8.125s-3.59.287-5.137.83L4.841 5.452a.416.416 0 0 0-.568-.152.416.416 0 0 0-.152.568l1.997 3.459C2.689 11.187.343 14.659 0 18.761h24c-.343-4.102-2.689-7.574-6.119-9.44"/>
+              </svg>
+              <span>Download APK</span>
+              <span class="btn-subtext">(Coming Soon)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand-side">
+        <a href="#home" class="footer-logo-link">
+          <img src="images/logo_text.png" alt="Jenrx Logo" class="footer-logo">
+        </a>
+        <p class="footer-tagline">
+          Your friendly, stress-free personal health companion. Simple, private, and always by your side.
+        </p>
+      </div>
+
+      <div class="footer-nav-side">
+        <div class="footer-column">
+          <span class="footer-col-title">Navigation</span>
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About Jenrx</a>
+          <a href="#features" class="footer-link">Features</a>
+        </div>
+
+        <div class="footer-column">
+          <span class="footer-col-title">App</span>
+          <a href="javascript:void(0)" class="footer-link btn-apk-trigger">Android APK</a>
+          <a href="javascript:void(0)" class="footer-link btn-apk-trigger">Release Notes</a>
+          <a href="javascript:void(0)" class="footer-link btn-apk-trigger">System Requirements</a>
+        </div>
+
+        <div class="footer-column">
+          <span class="footer-col-title">Privacy &amp; Trust</span>
+          <a href="javascript:void(0)" class="footer-link btn-privacy-trigger" data-target-tab="privacy" data-scroll-to="local-first">Local-First Storage</a>
+          <a href="javascript:void(0)" class="footer-link btn-privacy-trigger" data-target-tab="privacy" data-scroll-to="no-selling">No Data Selling</a>
+          <a href="javascript:void(0)" class="footer-link btn-privacy-trigger" data-target-tab="terms">Terms &amp; Privacy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright">&copy; 2026 Jenrx. All rights reserved.</p>
+        <p class="disclaimer">Jenrx is designed for personal logging and wellness tracking. Always consult qualified medical professionals for clinical diagnosis.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Coming Soon Modal for "Download APK" -->
+  <div class="modal-backdrop" id="apkModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-nurse-icon">
+        <img src="images/logo.png" alt="Jenrx Nurse Mascot" class="modal-nurse-img">
+      </div>
+
+      <div class="modal-platform-badge">
+        <svg class="android-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.523 15.34c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m-11.046 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1m11.405-6.02 1.997-3.46a.416.416 0 0 0-.152-.568.416.416 0 0 0-.568.152l-2.022 3.503C15.59 8.412 13.853 8.125 12 8.125s-3.59.287-5.137.83L4.841 5.452a.416.416 0 0 0-.568-.152.416.416 0 0 0-.152.568l1.997 3.459C2.689 11.187.343 14.659 0 18.761h24c-.343-4.102-2.689-7.574-6.119-9.44"/>
+        </svg>
+        <span>Android Only (Initial Release)</span>
+      </div>
+
+      <h3 class="modal-title" id="modalTitle">Android APK Coming Soon!</h3>
+      <p class="modal-description">
+        We are finalizing the Jenrx Android build so your dosage logs, clinic appointments, and vitals sync smoothly and locally on your phone.
+      </p>
+
+      <form class="modal-form" id="waitlistForm" onsubmit="event.preventDefault(); handleWaitlistSubmit();">
+        <div class="input-group">
+          <input type="email" id="waitlistEmail" class="modal-input" placeholder="Enter your email for early APK access" required>
+          <button type="submit" class="btn btn-primary modal-submit-btn">Notify Me</button>
+        </div>
+        <p class="form-feedback" id="formFeedback"></p>
+      </form>
+
+      <div class="modal-spec-row">
+        <span class="spec-chip">Android 9.0+</span>
+        <span class="spec-chip">100% Offline Capable</span>
+        <span class="spec-chip">Zero Ads</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms & Privacy Policy Popup Dialog -->
+  <div class="modal-backdrop" id="termsModal" aria-hidden="true" role="dialog" aria-labelledby="termsModalTitle">
+    <div class="modal-box modal-box-lg">
+      <button type="button" class="modal-close-btn" id="termsCloseBtn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="terms-modal-header">
+        <div class="terms-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="terms-header-text">
+          <h3 class="modal-title" id="termsModalTitle">Terms of Service &amp; Privacy</h3>
+          <span class="terms-update-tag">Effective Date: October 2026 • Local-First Architecture</span>
+        </div>
+      </div>
+
+      <!-- Policy Tabs Switcher -->
+      <div class="terms-tabs" role="tablist">
+        <button type="button" class="terms-tab-btn active" id="tabBtnPrivacy" role="tab" aria-selected="true" aria-controls="panelPrivacy">
+          Privacy Policy
+        </button>
+        <button type="button" class="terms-tab-btn" id="tabBtnTerms" role="tab" aria-selected="false" aria-controls="panelTerms">
+          Terms of Service
+        </button>
+      </div>
+
+      <!-- Scrollable Policy Content Body -->
+      <div class="terms-scroll-body">
+        
+        <!-- Tab Panel: Privacy Policy -->
+        <div class="terms-panel active" id="panelPrivacy" role="tabpanel" aria-labelledby="tabBtnPrivacy">
+          <div class="policy-section" id="policy-local-first">
+            <h4 class="policy-heading">1. Local-First Storage &amp; Data Ownership</h4>
+            <p>
+              Your health information is deeply personal. Jenrx is engineered with a strict <strong>local-first architecture</strong>. Every medication log, blood pressure reading, clinic appointment, and medical document PDF you store remains exclusively on your Android device's local storage.
+            </p>
+            <p>
+              We do not transmit, upload, or synchronize your personal health records to centralized cloud databases or third-party servers. If you delete the app or clear its storage, your records are permanently erased from the device.
+            </p>
+          </div>
+
+          <div class="policy-section" id="policy-no-selling">
+            <h4 class="policy-heading">2. Zero Data Selling &amp; No Advertising SDKs</h4>
+            <p>
+              We believe health tracking should never be monetized through surveillance. Jenrx operates under a clear, uncompromising commitment:
+            </p>
+            <ul class="policy-list">
+              <li><strong>No Data Brokering:</strong> We never sell, lease, trade, or share your identity or medical data with insurers, pharmaceutical companies, or data brokers.</li>
+              <li><strong>No Third-Party Ad Trackers:</strong> The Android application contains zero third-party advertising SDKs, analytics pixels, or behavioral tracking libraries.</li>
+              <li><strong>No User Profiling:</strong> We do not construct behavioral profiles or target you with sponsored medical products.</li>
+            </ul>
+          </div>
+
+          <div class="policy-section">
+            <h4 class="policy-heading">3. Device Permissions &amp; How They Are Used</h4>
+            <p>Jenrx requests only the minimal Android permissions necessary to provide essential tracking functions:</p>
+            <ul class="policy-list">
+              <li><strong>Storage / Media Access:</strong> Strictly used to allow you to select, preview, and organize your medical test results and prescription documents inside your custom folders.</li>
+              <li><strong>Notifications &amp; Alarms:</strong> Used exclusively to deliver your scheduled daily dosage prompts and appointment reminders locally on your device.</li>
+            </ul>
+          </div>
+
+          <div class="policy-section">
+            <h4 class="policy-heading">4. Data Export &amp; Control</h4>
+            <p>
+              You maintain 100% ownership of your data at all times. You can export your health logs into standard readable formats or wipe all stored records instantly through the in-app settings.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab Panel: Terms of Service -->
+        <div class="terms-panel" id="panelTerms" role="tabpanel" aria-labelledby="tabBtnTerms">
+          <div class="policy-section">
+            <h4 class="policy-heading">1. Personal Wellness Companion Disclaimer</h4>
+            <p>
+              Jenrx is provided strictly as an informational and personal wellness organization aid. It is designed to assist you in keeping track of your daily prescription schedules, blood pressure logs, and clinical appointment dates.
+            </p>
+            <div class="policy-alert-box">
+              <strong>Important Medical Disclaimer:</strong> Jenrx is NOT a medical device, licensed medical practitioner, clinical diagnostic tool, or emergency health service. It cannot diagnose, treat, cure, or prevent any disease or medical condition.
+            </div>
+            <p>
+              Always consult a qualified physician or healthcare provider regarding any questions you have about a medical condition, prescription dosage, or health symptoms. Never disregard or delay seeking professional medical advice because of information tracked within Jenrx.
+            </p>
+          </div>
+
+          <div class="policy-section">
+            <h4 class="policy-heading">2. User Responsibility for Dosage Accuracy</h4>
+            <p>
+              While Jenrx provides tools to log and schedule medications, you are solely responsible for ensuring the accuracy of the medicine names, dosages, intervals, and doctor consultation times that you enter into the application.
+            </p>
+          </div>
+
+          <div class="policy-section">
+            <h4 class="policy-heading">3. Software License &amp; Availability</h4>
+            <p>
+              Jenrx is licensed for personal, non-commercial use. The Android APK is made available "as is" and "as available". We continuously test and optimize the application to ensure stability, reliability, and privacy across supported Android operating system versions.
+            </p>
+          </div>
+
+          <div class="policy-section">
+            <h4 class="policy-heading">4. Updates &amp; Contact</h4>
+            <p>
+              We may update these terms as new features are introduced. Continued use of Jenrx constitutes acceptance of the latest terms. For inquiries regarding privacy or software feedback, reach out to our team at <strong>support@jenrx.app</strong>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="terms-modal-footer">
+        <button type="button" class="btn btn-primary btn-sm" id="termsDoneBtn">Understood &amp; Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification for Micro-interactions -->
+  <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
+    <span class="toast-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </span>
+    <span class="toast-message" id="toastMessage">Logged! Keep up the great routine.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
