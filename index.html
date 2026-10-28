@@ -26,6 +26,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Top Reading Scroll Progress Bar -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
 
   <!-- Floating Frosted Glassmorphism Navbar -->
   <header class="navbar-wrapper">
@@ -73,7 +77,7 @@
     <div class="container hero-container">
       
       <!-- Hero Left: Headline, Description & CTA -->
-      <div class="hero-content">
+      <div class="hero-content reveal reveal-left">
         <h1 class="hero-title">Take Control of Your Health, Simply</h1>
         <p class="hero-description">
           A personal health companion designed to help you stay on top of daily prescriptions, upcoming hospital visits, vital blood pressure logs, and medical records—all in one space.
@@ -119,7 +123,7 @@
       </div>
 
       <!-- Hero Right: 3D Mobile Mockup Showcase -->
-      <div class="hero-mockup-wrap">
+      <div class="hero-mockup-wrap reveal reveal-right">
         <div class="mockup-scene" id="mockupScene">
           
           <!-- 3D Smartphone Device Mockup -->
@@ -163,7 +167,7 @@
   <!-- About Jenrx Section -->
   <section class="about-section" id="about">
     <div class="container">
-      <div class="about-header">
+      <div class="about-header reveal">
         <h2 class="section-title">Health tracking built for everyday intake</h2>
         <p class="about-lead">
           Managing medications, blood pressure records, and clinical appointments shouldn't feel like a heavy load.
@@ -172,7 +176,7 @@
 
       <!-- Human Core Pillars (Clean, soft-shadow cards) -->
       <div class="about-grid">
-        <div class="about-card">
+        <div class="about-card reveal delay-100">
           <div class="about-icon-container">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10"></circle>
@@ -187,7 +191,7 @@
           </p>
         </div>
 
-        <div class="about-card">
+        <div class="about-card reveal delay-200">
           <div class="about-icon-container">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
@@ -201,7 +205,7 @@
           </p>
         </div>
 
-        <div class="about-card">
+        <div class="about-card reveal delay-300">
           <div class="about-icon-container">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0052CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -220,7 +224,7 @@
   <!-- Features Grid Section -->
   <section class="features-section" id="features">
     <div class="container">
-      <div class="features-intro">
+      <div class="features-intro reveal">
         <h2 class="section-title">Designed with care.</h2>
         <p class="features-lead">
           Four essential tools tuned to making daily wellness intuitive, clear, and dependable.
@@ -230,7 +234,7 @@
       <div class="features-grid">
         
         <!-- Feature 1: Medicine Tracker -->
-        <article class="feature-card">
+        <article class="feature-card reveal">
           <div class="feature-card-content">
             <h3 class="feature-title">Medicine Tracker</h3>
             <p class="feature-description">
@@ -328,7 +332,7 @@
         </article>
 
         <!-- Feature 2: Hospital Appointment Tracker -->
-        <article class="feature-card">
+        <article class="feature-card reveal">
           <div class="feature-card-content">
             <h3 class="feature-title">Hospital Appointment Tracker</h3>
             <p class="feature-description">
@@ -393,7 +397,7 @@
         </article>
 
         <!-- Feature 3: BP Monitoring -->
-        <article class="feature-card">
+        <article class="feature-card reveal">
           <div class="feature-card-content">
             <h3 class="feature-title">BP Monitoring</h3>
             <p class="feature-description">
@@ -462,7 +466,7 @@
         </article>
 
         <!-- Feature 4: Medical Documents Gallery -->
-        <article class="feature-card">
+        <article class="feature-card reveal">
           <div class="feature-card-content">
             <h3 class="feature-title">Medical Documents Gallery</h3>
             <p class="feature-description">
@@ -547,7 +551,7 @@
   <!-- Pre-Footer CTA Banner -->
   <section class="cta-banner-section">
     <div class="container">
-      <div class="cta-banner-card">
+      <div class="cta-banner-card reveal reveal-scale">
         <div class="cta-banner-content">
           <h2 class="cta-banner-title">Start your stress-free health journey</h2>
           <p class="cta-banner-desc">
@@ -569,7 +573,7 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-container">
+    <div class="container footer-container reveal">
       <div class="footer-brand-side">
         <a href="#home" class="footer-logo-link">
           <img src="images/logo_text.png" alt="Jenrx Logo" class="footer-logo">
@@ -784,6 +788,13 @@
     </span>
     <span class="toast-message" id="toastMessage">Logged! Keep up the great routine.</span>
   </div>
+
+  <!-- Floating Back-to-Top Button -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Jenrx Landing Page Scripts
  * Micro-interactions, 3D Mockup Tilt, APK Modal, Terms & Privacy Dialog, and Interactive Demos
  */
@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const toastMessage = document.getElementById('toastMessage');
   const mockupScene = document.getElementById('mockupScene');
   const phoneDevice = document.getElementById('phoneDevice');
+  const scrollProgressBar = document.getElementById('scrollProgressBar');
+  const backToTopBtn = document.getElementById('backToTopBtn');
 
   // --- 1. Sticky Frosted Navbar Scroll Elevation ---
   const handleScroll = () => {
@@ -43,6 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       navbar.style.boxShadow = 'var(--shadow-md)';
       navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.82)';
+    }
+
+    // Reading scroll progress bar
+    if (scrollProgressBar) {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+      scrollProgressBar.style.width = `${progress}%`;
+    }
+
+    // Floating Back-to-Top Button
+    if (backToTopBtn) {
+      if (window.scrollY > 350) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
     }
 
     // ScrollSpy: highlight active nav link
@@ -293,4 +311,35 @@ document.addEventListener('DOMContentLoaded', () => {
       if (systEl) systEl.textContent = val;
     });
   });
+
+  // --- 8. Scroll Reveal Observer & Back-to-Top Interaction ---
+  document.body.classList.add('js-scroll-anim');
+
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('revealed'));
+  }
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 });
