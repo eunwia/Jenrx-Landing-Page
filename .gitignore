@@ -9,3 +9,7 @@ Thumbs.db
 # Node
 node_modules/
 npm-debug.log*
+
+# Vercel deployment artifacts
+.vercel
+.env*.local
